@@ -9,4 +9,4 @@ WORKDIR /home/jovyan/work
 COPY --chown=${NB_UID}:${NB_GID} . /home/jovyan/work
 
 # Hanya untuk penggunaan lokal; akses JupyterLab tanpa password atau token.
-CMD ["start-notebook.py", "--ServerApp.token=", "--ServerApp.password="]
+CMD ["start-notebook.py", "--ServerApp.ip=0.0.0.0", "--ServerApp.token=", "--ServerApp.password=", "--ServerApp.disable_check_xsrf=True"]
